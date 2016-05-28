@@ -58,5 +58,10 @@ namespace FindSelectExport
         {
             this.Close();
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            tbcfse.SelectedIndex = 1;
+        }
     }
 }

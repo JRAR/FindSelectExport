@@ -45,9 +45,11 @@
             this.tbcfse = new System.Windows.Forms.TabControl();
             this.fbdDirectory = new System.Windows.Forms.FolderBrowserDialog();
             this.tbSearch = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tbqueries.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tbcfse.SuspendLayout();
+            this.tbSearch.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbqueries
@@ -81,6 +83,7 @@
             this.btnSearch.TabIndex = 6;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // groupBox1
             // 
@@ -200,6 +203,7 @@
             // 
             // tbSearch
             // 
+            this.tbSearch.Controls.Add(this.flowLayoutPanel1);
             this.tbSearch.Location = new System.Drawing.Point(4, 22);
             this.tbSearch.Name = "tbSearch";
             this.tbSearch.Padding = new System.Windows.Forms.Padding(3);
@@ -207,6 +211,13 @@
             this.tbSearch.TabIndex = 1;
             this.tbSearch.Text = "Search";
             this.tbSearch.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(352, 314);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // frmFSE
             // 
@@ -221,6 +232,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tbcfse.ResumeLayout(false);
+            this.tbSearch.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -244,6 +256,7 @@
         private System.Windows.Forms.TextBox txtFolderInput;
         private System.Windows.Forms.TextBox txtSearchItem;
         private System.Windows.Forms.TabPage tbSearch;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
 
 
     }
