@@ -42,19 +42,21 @@ namespace FindSelectExport
             {
                 lstQueryItems.Items.Add(txtSearchItem.Text);
                 txtSearchItem.Clear();
+                txtSearchItem.Focus();
             }
-        }
-
-        private void txtSearchItem_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            if (lstQueryItems.Items.Count != 0) {
+            if (lstQueryItems.Items.Count != 0 && lstQueryItems.SelectedIndex != -1)
+            {
                 lstQueryItems.Items.RemoveAt(lstQueryItems.SelectedIndex);
             }
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
