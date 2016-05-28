@@ -35,5 +35,33 @@ namespace FindSelectExport
             }
 
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (txtSearchItem.Text != "")
+            {
+                lstQueryItems.Items.Add(txtSearchItem.Text);
+                txtSearchItem.Clear();
+                txtSearchItem.Focus();
+            }
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            if (lstQueryItems.Items.Count != 0 && lstQueryItems.SelectedIndex != -1)
+            {
+                lstQueryItems.Items.RemoveAt(lstQueryItems.SelectedIndex);
+            }
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            tbcfse.SelectedIndex = 1;
+        }
     }
 }
