@@ -43,6 +43,7 @@
             this.txtFolderInput = new System.Windows.Forms.TextBox();
             this.tbcfse = new System.Windows.Forms.TabControl();
             this.fbdDirectory = new System.Windows.Forms.FolderBrowserDialog();
+            this.txtSearchItem = new System.Windows.Forms.TextBox();
             this.tbqueries.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tbcfse.SuspendLayout();
@@ -81,6 +82,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtSearchItem);
             this.groupBox1.Controls.Add(this.btnRemove);
             this.groupBox1.Controls.Add(this.btnAdd);
             this.groupBox1.Controls.Add(this.lstQueryItems);
@@ -90,30 +92,32 @@
             this.groupBox1.Controls.Add(this.btnTarget);
             this.groupBox1.Controls.Add(this.txtExportPath);
             this.groupBox1.Controls.Add(this.txtFolderInput);
-            this.groupBox1.Location = new System.Drawing.Point(6, 16);
+            this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(340, 236);
+            this.groupBox1.Size = new System.Drawing.Size(340, 260);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search Properties";
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(165, 201);
+            this.btnRemove.Location = new System.Drawing.Point(165, 228);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(80, 21);
             this.btnRemove.TabIndex = 12;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(84, 201);
+            this.btnAdd.Location = new System.Drawing.Point(84, 228);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(80, 21);
             this.btnAdd.TabIndex = 13;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lstQueryItems
             // 
@@ -184,6 +188,14 @@
             this.tbcfse.Size = new System.Drawing.Size(360, 337);
             this.tbcfse.TabIndex = 0;
             // 
+            // txtSearchItem
+            // 
+            this.txtSearchItem.Location = new System.Drawing.Point(85, 204);
+            this.txtSearchItem.Name = "txtSearchItem";
+            this.txtSearchItem.Size = new System.Drawing.Size(160, 20);
+            this.txtSearchItem.TabIndex = 14;
+            this.txtSearchItem.TextChanged += new System.EventHandler(this.txtSearchItem_TextChanged);
+            // 
             // frmFSE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -217,6 +229,7 @@
         private System.Windows.Forms.Button btnTarget;
         private System.Windows.Forms.TextBox txtExportPath;
         private System.Windows.Forms.TextBox txtFolderInput;
+        private System.Windows.Forms.TextBox txtSearchItem;
 
 
     }
