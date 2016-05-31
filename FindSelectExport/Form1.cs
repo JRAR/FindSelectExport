@@ -58,10 +58,40 @@ namespace FindSelectExport
         {
             this.Close();
         }
-
+    //panel.Anchor = System.Windows.Forms.AnchorStyles.None;
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            tbcfse.SelectedIndex = 1;
+            foreach (String item in lstQueryItems.Items)
+            {
+                Label label = new Label();
+                TableLayoutPanel panel = new TableLayoutPanel();
+                panel.ColumnCount = 1;
+                panel.RowCount = 2;
+                
+                //panel.Anchor = System.Windows.Forms.AnchorStyles.None;
+                panel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+                panel.RowStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+                label.Text = item;
+                panel.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
+                panel.Controls.Add(label, 1, 1);
+
+                panel.BorderStyle = BorderStyle.Fixed3D;
+                panel.Size = new Size(320, 100);
+
+
+                
+
+                flpMain.Controls.Add(panel);
+            }
+
+             tbcfse.SelectedIndex = 1;
+
         }
+
+        private void flpMain_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
     }
 }

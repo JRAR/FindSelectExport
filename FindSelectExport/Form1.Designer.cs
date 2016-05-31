@@ -31,7 +31,7 @@
             this.tbqueries = new System.Windows.Forms.TabPage();
             this.Exit = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpboxSearch = new System.Windows.Forms.GroupBox();
             this.txtSearchItem = new System.Windows.Forms.TextBox();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -43,11 +43,11 @@
             this.txtExportPath = new System.Windows.Forms.TextBox();
             this.txtFolderInput = new System.Windows.Forms.TextBox();
             this.tbcfse = new System.Windows.Forms.TabControl();
-            this.fbdDirectory = new System.Windows.Forms.FolderBrowserDialog();
             this.tbSearch = new System.Windows.Forms.TabPage();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpMain = new System.Windows.Forms.FlowLayoutPanel();
+            this.fbdDirectory = new System.Windows.Forms.FolderBrowserDialog();
             this.tbqueries.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.grpboxSearch.SuspendLayout();
             this.tbcfse.SuspendLayout();
             this.tbSearch.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +57,7 @@
             this.tbqueries.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.tbqueries.Controls.Add(this.Exit);
             this.tbqueries.Controls.Add(this.btnSearch);
-            this.tbqueries.Controls.Add(this.groupBox1);
+            this.tbqueries.Controls.Add(this.grpboxSearch);
             this.tbqueries.Location = new System.Drawing.Point(4, 22);
             this.tbqueries.Name = "tbqueries";
             this.tbqueries.Padding = new System.Windows.Forms.Padding(3);
@@ -85,24 +85,24 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // groupBox1
+            // grpboxSearch
             // 
-            this.groupBox1.Controls.Add(this.txtSearchItem);
-            this.groupBox1.Controls.Add(this.btnRemove);
-            this.groupBox1.Controls.Add(this.btnAdd);
-            this.groupBox1.Controls.Add(this.lstQueryItems);
-            this.groupBox1.Controls.Add(this.lblExport);
-            this.groupBox1.Controls.Add(this.lblTarget);
-            this.groupBox1.Controls.Add(this.btnExport);
-            this.groupBox1.Controls.Add(this.btnTarget);
-            this.groupBox1.Controls.Add(this.txtExportPath);
-            this.groupBox1.Controls.Add(this.txtFolderInput);
-            this.groupBox1.Location = new System.Drawing.Point(6, 6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(340, 250);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Search Properties";
+            this.grpboxSearch.Controls.Add(this.txtSearchItem);
+            this.grpboxSearch.Controls.Add(this.btnRemove);
+            this.grpboxSearch.Controls.Add(this.btnAdd);
+            this.grpboxSearch.Controls.Add(this.lstQueryItems);
+            this.grpboxSearch.Controls.Add(this.lblExport);
+            this.grpboxSearch.Controls.Add(this.lblTarget);
+            this.grpboxSearch.Controls.Add(this.btnExport);
+            this.grpboxSearch.Controls.Add(this.btnTarget);
+            this.grpboxSearch.Controls.Add(this.txtExportPath);
+            this.grpboxSearch.Controls.Add(this.txtFolderInput);
+            this.grpboxSearch.Location = new System.Drawing.Point(6, 6);
+            this.grpboxSearch.Name = "grpboxSearch";
+            this.grpboxSearch.Size = new System.Drawing.Size(340, 250);
+            this.grpboxSearch.TabIndex = 5;
+            this.grpboxSearch.TabStop = false;
+            this.grpboxSearch.Text = "Search Properties";
             // 
             // txtSearchItem
             // 
@@ -203,7 +203,7 @@
             // 
             // tbSearch
             // 
-            this.tbSearch.Controls.Add(this.flowLayoutPanel1);
+            this.tbSearch.Controls.Add(this.flpMain);
             this.tbSearch.Location = new System.Drawing.Point(4, 22);
             this.tbSearch.Name = "tbSearch";
             this.tbSearch.Padding = new System.Windows.Forms.Padding(3);
@@ -212,12 +212,18 @@
             this.tbSearch.Text = "Search";
             this.tbSearch.UseVisualStyleBackColor = true;
             // 
-            // flowLayoutPanel1
+            // flpMain
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(352, 314);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.flpMain.AutoScroll = true;
+            this.flpMain.AutoSize = true;
+            this.flpMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpMain.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpMain.Location = new System.Drawing.Point(3, 3);
+            this.flpMain.Name = "flpMain";
+            this.flpMain.Size = new System.Drawing.Size(346, 305);
+            this.flpMain.TabIndex = 0;
+            this.flpMain.WrapContents = false;
+            this.flpMain.Paint += new System.Windows.Forms.PaintEventHandler(this.flpMain_Paint);
             // 
             // frmFSE
             // 
@@ -229,10 +235,11 @@
             this.Name = "frmFSE";
             this.Text = "FSE";
             this.tbqueries.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grpboxSearch.ResumeLayout(false);
+            this.grpboxSearch.PerformLayout();
             this.tbcfse.ResumeLayout(false);
             this.tbSearch.ResumeLayout(false);
+            this.tbSearch.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -244,7 +251,7 @@
         private System.Windows.Forms.FolderBrowserDialog fbdDirectory;
         private System.Windows.Forms.Button Exit;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grpboxSearch;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.ListBox lstQueryItems;
@@ -256,7 +263,7 @@
         private System.Windows.Forms.TextBox txtFolderInput;
         private System.Windows.Forms.TextBox txtSearchItem;
         private System.Windows.Forms.TabPage tbSearch;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flpMain;
 
 
     }
