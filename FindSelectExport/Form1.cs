@@ -63,25 +63,51 @@ namespace FindSelectExport
         {
             foreach (String item in lstQueryItems.Items)
             {
-                Label label = new Label();
-                TableLayoutPanel panel = new TableLayoutPanel();
-                panel = GenerateTable(panel, 1,1);
-                label.Anchor = AnchorStyles.None;
-                label.BorderStyle = BorderStyle.Fixed3D;
-                label.AutoSize = true;
-                label.Text = item;         
-                panel.Controls.Add(label,0,0);
+                TableLayoutPanel panelSearch = new TableLayoutPanel();
+                TableLayoutPanel panelResults = new TableLayoutPanel();
 
-                panel.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
-
-                panel.Size = new Size(320, 100);
+                Label lblSearchQuery = new Label();
+                Label lblresults = new Label();
 
 
-                
-                flpMain.Controls.Add(panel);
+                lblSearchQuery = configureLabel(lblSearchQuery);
+                lblresults = configureLabel(lblresults);
+
+                panelSearch = GenerateTable(panelSearch, 0, 1);
+                panelResults = GenerateTable(panelResults, 0, 2);
+
+                panelResults.Anchor = AnchorStyles.None; // Center table
+
+                lblSearchQuery.Text = item;
+                lblresults.Text = "This is a test";
+
+                panelResults.Controls.Add(lblresults, 0, 0);
+
+                panelSearch.Controls.Add(lblSearchQuery, 0, 0);
+                panelSearch.Controls.Add(panelResults, 0, 1);
+
+                panelSearch.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
+                panelSearch.Size = new Size(320, 100);
+
+                panelResults.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
+                panelResults.Size = new Size(160, 50);
+
+
+                flpMain.Controls.Add(panelSearch);
             }
 
              tbcfse.SelectedIndex = 1;
+
+        }
+
+
+        private Label configureLabel(Label label)
+        {
+            label.Anchor = AnchorStyles.None;
+            label.BorderStyle = BorderStyle.Fixed3D;
+            label.AutoSize = true;
+
+            return label;
 
         }
 
