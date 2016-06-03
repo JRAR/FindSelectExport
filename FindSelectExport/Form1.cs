@@ -64,33 +64,60 @@ namespace FindSelectExport
             foreach (String item in lstQueryItems.Items)
             {
                 TableLayoutPanel panelSearch = new TableLayoutPanel();
-                TableLayoutPanel panelResults = new TableLayoutPanel();
-
                 Label lblSearchQuery = new Label();
-                Label lblresults = new Label();
-
-
+               
                 lblSearchQuery = configureLabel(lblSearchQuery);
-                lblresults = configureLabel(lblresults);
-
-                panelSearch = GenerateTable(panelSearch, 0, 1);
-                panelResults = GenerateTable(panelResults, 0, 2);
-
-                panelResults.Anchor = AnchorStyles.None; // Center table
-
+                panelSearch.Anchor = AnchorStyles.None;
+                panelSearch.Dock = DockStyle.None;
                 lblSearchQuery.Text = item;
-                lblresults.Text = "This is a test";
 
-                panelResults.Controls.Add(lblresults, 0, 0);
+
+
+                for (int i = 0; i < 2; i++)
+                {
+                    TableLayoutPanel panelResults = new TableLayoutPanel();
+                    Label lblresults = new Label();
+                    DataTable table1 = new DataTable("Test table");
+                    DataGridView grid = new DataGridView();
+
+                    grid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    grid.RowHeadersVisible = false;
+                    grid.DataSource = table1;
+                    panelResults.Anchor = AnchorStyles.None; // Center table
+
+                    lblresults = configureLabel(lblresults);
+                    lblresults.Text = "This is a test";
+                    panelResults.Dock = DockStyle.None;
+                    panelResults.Controls.Add(lblresults, 0, 0);
+                    panelResults.Controls.Add(grid, 0, 1);
+
+
+
+                    table1.Columns.Add("PATH");
+                    table1.Columns.Add(new DataColumn("Action", typeof(bool)));
+                    table1.Rows.Add("C:\\This\\Is\a\\File.xls", 1);
+                    table1.Rows.Add("C:\\This\\Is\a\\File.xls", 2);
+
+                    panelResults.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
+                    panelResults.MinimumSize = new Size(250, 50);
+                    panelResults.AutoSize = true;
+
+                    panelSearch.Controls.Add(panelResults);
+                }
+
+
 
                 panelSearch.Controls.Add(lblSearchQuery, 0, 0);
-                panelSearch.Controls.Add(panelResults, 0, 1);
+                
+       
 
+
+                
+
+              
                 panelSearch.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
-                panelSearch.Size = new Size(320, 100);
-
-                panelResults.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
-                panelResults.Size = new Size(160, 50);
+                panelSearch.MinimumSize = new Size(320, 100);
+                panelSearch.AutoSize = true;
 
 
                 flpMain.Controls.Add(panelSearch);

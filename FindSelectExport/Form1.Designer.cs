@@ -43,9 +43,9 @@
             this.txtExportPath = new System.Windows.Forms.TextBox();
             this.txtFolderInput = new System.Windows.Forms.TextBox();
             this.tbcfse = new System.Windows.Forms.TabControl();
+            this.fbdDirectory = new System.Windows.Forms.FolderBrowserDialog();
             this.tbSearch = new System.Windows.Forms.TabPage();
             this.flpMain = new System.Windows.Forms.FlowLayoutPanel();
-            this.fbdDirectory = new System.Windows.Forms.FolderBrowserDialog();
             this.tbqueries.SuspendLayout();
             this.grpboxSearch.SuspendLayout();
             this.tbcfse.SuspendLayout();
