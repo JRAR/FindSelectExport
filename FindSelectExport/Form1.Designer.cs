@@ -43,9 +43,9 @@
             this.txtExportPath = new System.Windows.Forms.TextBox();
             this.txtFolderInput = new System.Windows.Forms.TextBox();
             this.tbcfse = new System.Windows.Forms.TabControl();
-            this.fbdDirectory = new System.Windows.Forms.FolderBrowserDialog();
             this.tbSearch = new System.Windows.Forms.TabPage();
             this.flpMain = new System.Windows.Forms.FlowLayoutPanel();
+            this.fbdDirectory = new System.Windows.Forms.FolderBrowserDialog();
             this.tbqueries.SuspendLayout();
             this.grpboxSearch.SuspendLayout();
             this.tbcfse.SuspendLayout();
@@ -61,7 +61,7 @@
             this.tbqueries.Location = new System.Drawing.Point(4, 22);
             this.tbqueries.Name = "tbqueries";
             this.tbqueries.Padding = new System.Windows.Forms.Padding(3);
-            this.tbqueries.Size = new System.Drawing.Size(352, 311);
+            this.tbqueries.Size = new System.Drawing.Size(677, 311);
             this.tbqueries.TabIndex = 0;
             this.tbqueries.Text = "Queries";
             // 
@@ -190,6 +190,7 @@
             this.txtFolderInput.Name = "txtFolderInput";
             this.txtFolderInput.Size = new System.Drawing.Size(160, 20);
             this.txtFolderInput.TabIndex = 6;
+            this.txtFolderInput.Text = "C:\\Users\\Jesse\\Documents\\Archieve";
             // 
             // tbcfse
             // 
@@ -198,7 +199,7 @@
             this.tbcfse.Location = new System.Drawing.Point(12, 12);
             this.tbcfse.Name = "tbcfse";
             this.tbcfse.SelectedIndex = 0;
-            this.tbcfse.Size = new System.Drawing.Size(360, 337);
+            this.tbcfse.Size = new System.Drawing.Size(685, 337);
             this.tbcfse.TabIndex = 0;
             // 
             // tbSearch
@@ -207,7 +208,7 @@
             this.tbSearch.Location = new System.Drawing.Point(4, 22);
             this.tbSearch.Name = "tbSearch";
             this.tbSearch.Padding = new System.Windows.Forms.Padding(3);
-            this.tbSearch.Size = new System.Drawing.Size(352, 311);
+            this.tbSearch.Size = new System.Drawing.Size(677, 311);
             this.tbSearch.TabIndex = 1;
             this.tbSearch.Text = "Search";
             this.tbSearch.UseVisualStyleBackColor = true;
@@ -220,17 +221,16 @@
             this.flpMain.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flpMain.Location = new System.Drawing.Point(3, 3);
             this.flpMain.Name = "flpMain";
-            this.flpMain.Size = new System.Drawing.Size(346, 305);
+            this.flpMain.Size = new System.Drawing.Size(671, 305);
             this.flpMain.TabIndex = 0;
             this.flpMain.WrapContents = false;
-            this.flpMain.Paint += new System.Windows.Forms.PaintEventHandler(this.flpMain_Paint);
             // 
             // frmFSE
             // 
             this.AcceptButton = this.btnAdd;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 361);
+            this.ClientSize = new System.Drawing.Size(709, 361);
             this.Controls.Add(this.tbcfse);
             this.Name = "frmFSE";
             this.Text = "FSE";
