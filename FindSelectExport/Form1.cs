@@ -65,10 +65,16 @@ namespace FindSelectExport
         {
             foreach (String item in lstQueryItems.Items)
             {
-              this.flpMain.Controls.Add(FileResults.GetDataPanel(txtFolderInput.Text, item));
+              treeView1.Nodes.Add(FileResults.GetDataPanel(txtFolderInput.Text,item));
+
             }
 
              tbcfse.SelectedIndex = 1;
+
+        }
+
+        private void tbSearch_Click(object sender, EventArgs e)
+        {
 
         }
 

@@ -44,8 +44,8 @@
             this.txtFolderInput = new System.Windows.Forms.TextBox();
             this.tbcfse = new System.Windows.Forms.TabControl();
             this.tbSearch = new System.Windows.Forms.TabPage();
-            this.flpMain = new System.Windows.Forms.FlowLayoutPanel();
             this.fbdDirectory = new System.Windows.Forms.FolderBrowserDialog();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             this.tbqueries.SuspendLayout();
             this.grpboxSearch.SuspendLayout();
             this.tbcfse.SuspendLayout();
@@ -61,7 +61,7 @@
             this.tbqueries.Location = new System.Drawing.Point(4, 22);
             this.tbqueries.Name = "tbqueries";
             this.tbqueries.Padding = new System.Windows.Forms.Padding(3);
-            this.tbqueries.Size = new System.Drawing.Size(677, 311);
+            this.tbqueries.Size = new System.Drawing.Size(352, 311);
             this.tbqueries.TabIndex = 0;
             this.tbqueries.Text = "Queries";
             // 
@@ -134,6 +134,8 @@
             // lstQueryItems
             // 
             this.lstQueryItems.FormattingEnabled = true;
+            this.lstQueryItems.Items.AddRange(new object[] {
+            "*paper*"});
             this.lstQueryItems.Location = new System.Drawing.Point(85, 106);
             this.lstQueryItems.Name = "lstQueryItems";
             this.lstQueryItems.Size = new System.Drawing.Size(160, 82);
@@ -199,38 +201,34 @@
             this.tbcfse.Location = new System.Drawing.Point(12, 12);
             this.tbcfse.Name = "tbcfse";
             this.tbcfse.SelectedIndex = 0;
-            this.tbcfse.Size = new System.Drawing.Size(685, 337);
+            this.tbcfse.Size = new System.Drawing.Size(653, 337);
             this.tbcfse.TabIndex = 0;
             // 
             // tbSearch
             // 
-            this.tbSearch.Controls.Add(this.flpMain);
+            this.tbSearch.Controls.Add(this.treeView1);
             this.tbSearch.Location = new System.Drawing.Point(4, 22);
             this.tbSearch.Name = "tbSearch";
             this.tbSearch.Padding = new System.Windows.Forms.Padding(3);
-            this.tbSearch.Size = new System.Drawing.Size(677, 311);
+            this.tbSearch.Size = new System.Drawing.Size(645, 311);
             this.tbSearch.TabIndex = 1;
             this.tbSearch.Text = "Search";
             this.tbSearch.UseVisualStyleBackColor = true;
+            this.tbSearch.Click += new System.EventHandler(this.tbSearch_Click);
             // 
-            // flpMain
+            // treeView1
             // 
-            this.flpMain.AutoScroll = true;
-            this.flpMain.AutoSize = true;
-            this.flpMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpMain.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flpMain.Location = new System.Drawing.Point(3, 3);
-            this.flpMain.Name = "flpMain";
-            this.flpMain.Size = new System.Drawing.Size(671, 305);
-            this.flpMain.TabIndex = 0;
-            this.flpMain.WrapContents = false;
+            this.treeView1.Location = new System.Drawing.Point(6, 3);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(633, 299);
+            this.treeView1.TabIndex = 0;
             // 
             // frmFSE
             // 
             this.AcceptButton = this.btnAdd;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(709, 361);
+            this.ClientSize = new System.Drawing.Size(677, 361);
             this.Controls.Add(this.tbcfse);
             this.Name = "frmFSE";
             this.Text = "FSE";
@@ -239,7 +237,6 @@
             this.grpboxSearch.PerformLayout();
             this.tbcfse.ResumeLayout(false);
             this.tbSearch.ResumeLayout(false);
-            this.tbSearch.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -263,7 +260,7 @@
         private System.Windows.Forms.TextBox txtFolderInput;
         private System.Windows.Forms.TextBox txtSearchItem;
         private System.Windows.Forms.TabPage tbSearch;
-        private System.Windows.Forms.FlowLayoutPanel flpMain;
+        private System.Windows.Forms.TreeView treeView1;
 
 
     }
