@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 
 
+
 namespace FindSelectExport
 {
 
@@ -88,7 +89,7 @@ namespace FindSelectExport
             PanelConfiguration panel = new PanelConfiguration(keyword);
             TreeNode tNode = new TreeNode();
 
-            tNode.Nodes.Add(String.Format("Query '{0}' ({1} Result(s))", keyword, distictFileList.Count()));
+            tNode.Text = (String.Format("Query '{0}' ({1} Result(s))", keyword, distictFileList.Count()));
             int fileIndex = 0;
 
             //Phase 1 - link all the files with paths
@@ -96,18 +97,19 @@ namespace FindSelectExport
             {
                 FilePath targetFile = new FilePath();
                 targetFile.file = item;
-                targetFile.distictFiles = rawFileList.Where(stringToCheck => stringToCheck.Contains(item)).ToList();
+                targetFile.distictFiles = rawFileList.Where(stringToCheck => Path.GetFileName(stringToCheck).Equals(item)).ToList();
                 results.Add(targetFile);
             }
 
             //Phase 2 - build all treeview nodes
             foreach (FilePath result in results)
             {
-                tNode.Nodes[0].Nodes.Add(result.file);
+                tNode.Nodes.Add(String.Format("{0} - ({1})",result.file,result.distictFiles.Count()));
                 
                 foreach (String path in result.distictFiles)
                 {
-                    tNode.Nodes[0].Nodes[fileIndex].Nodes.Add(path);
+                    tNode.Nodes[fileIndex].Nodes.Add(path);
+           
                 }
                 fileIndex += 1;
             }

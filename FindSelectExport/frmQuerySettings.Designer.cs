@@ -79,6 +79,7 @@
             this.btnRemove.TabIndex = 12;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnAdd
             // 
@@ -88,12 +89,11 @@
             this.btnAdd.TabIndex = 13;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lstQueryItems
             // 
             this.lstQueryItems.FormattingEnabled = true;
-            this.lstQueryItems.Items.AddRange(new object[] {
-            "*paper*"});
             this.lstQueryItems.Location = new System.Drawing.Point(85, 106);
             this.lstQueryItems.Name = "lstQueryItems";
             this.lstQueryItems.Size = new System.Drawing.Size(160, 82);
@@ -125,6 +125,7 @@
             this.btnExport.TabIndex = 7;
             this.btnExport.Text = "Browse";
             this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // btnTarget
             // 
@@ -134,6 +135,7 @@
             this.btnTarget.TabIndex = 8;
             this.btnTarget.Text = "Browse";
             this.btnTarget.UseVisualStyleBackColor = true;
+            this.btnTarget.Click += new System.EventHandler(this.btnTarget_Click);
             // 
             // txtExportPath
             // 
@@ -158,6 +160,7 @@
             this.Exit.TabIndex = 8;
             this.Exit.Text = "Exit";
             this.Exit.UseVisualStyleBackColor = true;
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // btnSearch
             // 
