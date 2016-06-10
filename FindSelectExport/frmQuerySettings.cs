@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Collections;
 using System.Windows.Forms;
+using System.IO;
 
 namespace FindSelectExport
 {
@@ -80,22 +81,65 @@ namespace FindSelectExport
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            mainForm.getMainTreeView.Nodes.Clear();
-            foreach (String item in this.lstQueryItems.Items)
+           
+
+
+            if (fieldsAreValid())
             {
-                mainForm.getMainTreeView.Nodes.Add(FileResults.GetDataPanel(this.txtFolderInput.Text, item));
+                mainForm.fileInput = this.txtFolderInput.Text;
+                mainForm.fileDestination = this.txtExportPath.Text;
+                mainForm.queryList = this.lstQueryItems.Items.Cast<String>().ToList();
+                mainForm.exportList.Clear();
+
+                mainForm.getMainTreeView.Nodes.Clear();
+
+                Cursor.Current = Cursors.WaitCursor;
+                foreach (String item in this.lstQueryItems.Items)
+                {
+                    
+                    mainForm.getMainTreeView.Nodes.Add(FileManager.GetTreeData(this.txtFolderInput.Text, item));
+                }
+                Cursor.Current = Cursors.Default;
+
+                mainForm.Focus();
+                this.Close();
             }
-            mainForm.Focus();
-
-            mainForm.fileInput = this.txtFolderInput.Text;
-            mainForm.fileDestination = this.txtExportPath.Text;
-            mainForm.queryList = this.lstQueryItems.Items.Cast<String>().ToList();
-
-
-
-            this.Close();
-
         }
+
+
+        private bool fieldsAreValid()
+        {
+            String errorMessages = "";
+
+            if (!Directory.Exists(this.txtFolderInput.Text))
+            {
+                errorMessages += "File input path does not exist\n";
+
+            }
+
+            if (!Directory.Exists(this.txtExportPath.Text))
+            {
+                errorMessages += "File Export path does not exist\n";
+
+            }
+
+            if (lstQueryItems.Items.Count == 0)
+            {
+                errorMessages += "There are no items to query\n";
+
+            }
+
+            if (!String.IsNullOrEmpty(errorMessages))
+            {
+                errorMessages += "\nPlease fix any errors before proceding.";
+                errorMessages = "The following errors have occured:\n\n" + errorMessages;
+                MessageBox.Show(errorMessages,"Error: Missing field",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
+        }
+
 
         private void frmQuerySettings_Load(object sender, EventArgs e)
         {

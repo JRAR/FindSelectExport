@@ -33,17 +33,19 @@
             this.ftmsMainMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.querySettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tvResults = new System.Windows.Forms.TreeView();
             this.btnExport = new System.Windows.Forms.Button();
+            this.grpExport = new System.Windows.Forms.GroupBox();
+            this.lblSelectIndex = new System.Windows.Forms.Label();
+            this.chkDeleteDestination = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
+            this.grpExport.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ftmsMainMenu,
-            this.helpToolStripMenuItem});
+            this.ftmsMainMenu});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(530, 24);
@@ -62,55 +64,83 @@
             // querySettingsToolStripMenuItem
             // 
             this.querySettingsToolStripMenuItem.Name = "querySettingsToolStripMenuItem";
-            this.querySettingsToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.querySettingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.querySettingsToolStripMenuItem.Text = "Query Settings";
             this.querySettingsToolStripMenuItem.Click += new System.EventHandler(this.querySettingsToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
             // 
             // tvResults
             // 
             this.tvResults.CheckBoxes = true;
             this.tvResults.Location = new System.Drawing.Point(12, 27);
             this.tvResults.Name = "tvResults";
-            this.tvResults.Size = new System.Drawing.Size(506, 153);
+            this.tvResults.Size = new System.Drawing.Size(506, 198);
             this.tvResults.TabIndex = 2;
+            this.tvResults.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.treeView_After_Check);
             this.tvResults.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView_AfterExpand);
             // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(212, 197);
+            this.btnExport.Location = new System.Drawing.Point(6, 61);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(106, 23);
             this.btnExport.TabIndex = 3;
             this.btnExport.Text = "Export Files";
             this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // grpExport
+            // 
+            this.grpExport.Controls.Add(this.chkDeleteDestination);
+            this.grpExport.Controls.Add(this.lblSelectIndex);
+            this.grpExport.Controls.Add(this.btnExport);
+            this.grpExport.Location = new System.Drawing.Point(106, 231);
+            this.grpExport.Name = "grpExport";
+            this.grpExport.Size = new System.Drawing.Size(338, 101);
+            this.grpExport.TabIndex = 4;
+            this.grpExport.TabStop = false;
+            this.grpExport.Text = "Export Options";
+            // 
+            // lblSelectIndex
+            // 
+            this.lblSelectIndex.AutoSize = true;
+            this.lblSelectIndex.Location = new System.Drawing.Point(86, 25);
+            this.lblSelectIndex.Name = "lblSelectIndex";
+            this.lblSelectIndex.Size = new System.Drawing.Size(85, 13);
+            this.lblSelectIndex.TabIndex = 4;
+            this.lblSelectIndex.Text = "Selected Files: 0";
+            // 
+            // chkDeleteDestination
+            // 
+            this.chkDeleteDestination.AutoSize = true;
+            this.chkDeleteDestination.Location = new System.Drawing.Point(185, 65);
+            this.chkDeleteDestination.Name = "chkDeleteDestination";
+            this.chkDeleteDestination.Size = new System.Drawing.Size(120, 17);
+            this.chkDeleteDestination.TabIndex = 5;
+            this.chkDeleteDestination.Text = "Delete Old Location";
+            this.chkDeleteDestination.UseVisualStyleBackColor = true;
             // 
             // frmFSE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(530, 242);
-            this.Controls.Add(this.btnExport);
+            this.ClientSize = new System.Drawing.Size(530, 344);
+            this.Controls.Add(this.grpExport);
             this.Controls.Add(this.tvResults);
             this.Controls.Add(this.menuStrip1);
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmFSE";
             this.Text = "FSE";
             this.Load += new System.EventHandler(this.frmFSE_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.grpExport.ResumeLayout(false);
+            this.grpExport.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,9 +153,11 @@
         private System.Windows.Forms.ToolStripMenuItem ftmsMainMenu;
         private System.Windows.Forms.ToolStripMenuItem querySettingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.TreeView tvResults;
         private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.GroupBox grpExport;
+        private System.Windows.Forms.CheckBox chkDeleteDestination;
+        private System.Windows.Forms.Label lblSelectIndex;
 
 
     }
