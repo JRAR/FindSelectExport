@@ -14,6 +14,11 @@ namespace FindSelectExport
     public partial class frmQuerySettings : Form
     {
 
+        /// <summary>
+        /// Query Settings form is design to give the user options to modify search queries, and specify a input and 
+        /// export file.
+        /// </summary>
+
         private frmFSE mainForm = null;
 
         public frmQuerySettings()
@@ -23,17 +28,18 @@ namespace FindSelectExport
 
         }
 
+        /// <summary>
+        /// Initiation method created from main form
+        /// </summary>
         public frmQuerySettings(Form callingForm, String fileInput, String fileTarget, List<String> queryItems)
         {
             mainForm = callingForm as frmFSE;
             InitializeComponent();
-
             this.txtFolderInput.Text = fileInput;
             this.txtExportPath.Text = fileTarget;
             this.lstQueryItems.Items.AddRange(queryItems.ToArray());
 
         }
-
 
         private void btnTarget_Click(object sender, System.EventArgs e)
         {
@@ -86,27 +92,31 @@ namespace FindSelectExport
 
             if (fieldsAreValid())
             {
+                //Send fields to main form for external memory
                 mainForm.fileInput = this.txtFolderInput.Text;
                 mainForm.fileDestination = this.txtExportPath.Text;
                 mainForm.queryList = this.lstQueryItems.Items.Cast<String>().ToList();
                 mainForm.exportList.Clear();
 
+                //Clear the tree of any entrees
                 mainForm.getMainTreeView.Nodes.Clear();
-
+                //Put the curser on wait to alert the user of calculation
                 Cursor.Current = Cursors.WaitCursor;
-                foreach (String item in this.lstQueryItems.Items)
+                foreach (String item in this.lstQueryItems.Items) // For each query
                 {
-                    
+                    //Get file results
                     mainForm.getMainTreeView.Nodes.Add(FileManager.GetTreeData(this.txtFolderInput.Text, item));
                 }
-                Cursor.Current = Cursors.Default;
+                Cursor.Current = Cursors.Default; //Set curser back to defult
 
                 mainForm.Focus();
                 this.Close();
             }
         }
 
-
+        /// <summary>
+        /// Check if all the fields for sanity
+        /// </summary>
         private bool fieldsAreValid()
         {
             String errorMessages = "";
@@ -139,7 +149,6 @@ namespace FindSelectExport
 
             return true;
         }
-
 
         private void frmQuerySettings_Load(object sender, EventArgs e)
         {

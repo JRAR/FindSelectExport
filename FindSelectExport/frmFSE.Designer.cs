@@ -36,8 +36,8 @@
             this.tvResults = new System.Windows.Forms.TreeView();
             this.btnExport = new System.Windows.Forms.Button();
             this.grpExport = new System.Windows.Forms.GroupBox();
-            this.lblSelectIndex = new System.Windows.Forms.Label();
             this.chkDeleteDestination = new System.Windows.Forms.CheckBox();
+            this.lblSelectIndex = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.grpExport.SuspendLayout();
             this.SuspendLayout();
@@ -64,14 +64,14 @@
             // querySettingsToolStripMenuItem
             // 
             this.querySettingsToolStripMenuItem.Name = "querySettingsToolStripMenuItem";
-            this.querySettingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.querySettingsToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.querySettingsToolStripMenuItem.Text = "Query Settings";
             this.querySettingsToolStripMenuItem.Click += new System.EventHandler(this.querySettingsToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // tvResults
@@ -106,15 +106,6 @@
             this.grpExport.TabStop = false;
             this.grpExport.Text = "Export Options";
             // 
-            // lblSelectIndex
-            // 
-            this.lblSelectIndex.AutoSize = true;
-            this.lblSelectIndex.Location = new System.Drawing.Point(86, 25);
-            this.lblSelectIndex.Name = "lblSelectIndex";
-            this.lblSelectIndex.Size = new System.Drawing.Size(85, 13);
-            this.lblSelectIndex.TabIndex = 4;
-            this.lblSelectIndex.Text = "Selected Files: 0";
-            // 
             // chkDeleteDestination
             // 
             this.chkDeleteDestination.AutoSize = true;
@@ -124,6 +115,15 @@
             this.chkDeleteDestination.TabIndex = 5;
             this.chkDeleteDestination.Text = "Delete Old Location";
             this.chkDeleteDestination.UseVisualStyleBackColor = true;
+            // 
+            // lblSelectIndex
+            // 
+            this.lblSelectIndex.AutoSize = true;
+            this.lblSelectIndex.Location = new System.Drawing.Point(86, 25);
+            this.lblSelectIndex.Name = "lblSelectIndex";
+            this.lblSelectIndex.Size = new System.Drawing.Size(85, 13);
+            this.lblSelectIndex.TabIndex = 4;
+            this.lblSelectIndex.Text = "Selected Files: 0";
             // 
             // frmFSE
             // 

@@ -64,6 +64,8 @@ namespace FindSelectExport
         //Export list of items for each individual item checked on the tree
         public List<String> exportList { set; get; }
 
+        private String versionString;
+
         public frmFSE()
         {
 
@@ -72,6 +74,11 @@ namespace FindSelectExport
             this.tvResults.CheckBoxes = true;
             this.tvResults.DrawMode = TreeViewDrawMode.OwnerDrawText;
             this.tvResults.DrawNode += new DrawTreeNodeEventHandler(tree_DrawNode);
+
+            versionString = Application.ProductVersion;
+
+            this.Text = String.Format("FSE VER {0}", versionString);
+
             //Initiate lists
             queryList = new List<String>();
             exportList = new List<String>();
