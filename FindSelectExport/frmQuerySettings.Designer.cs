@@ -1,6 +1,6 @@
 ﻿namespace FindSelectExport
 {
-    partial class frmFSE
+    partial class frmQuerySettings
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbqueries = new System.Windows.Forms.TabPage();
-            this.Exit = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpboxSearch = new System.Windows.Forms.GroupBox();
             this.txtSearchItem = new System.Windows.Forms.TextBox();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -42,67 +39,30 @@
             this.btnTarget = new System.Windows.Forms.Button();
             this.txtExportPath = new System.Windows.Forms.TextBox();
             this.txtFolderInput = new System.Windows.Forms.TextBox();
-            this.tbcfse = new System.Windows.Forms.TabControl();
+            this.Exit = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.fbdDirectory = new System.Windows.Forms.FolderBrowserDialog();
-            this.tbSearch = new System.Windows.Forms.TabPage();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.tbqueries.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.tbcfse.SuspendLayout();
-            this.tbSearch.SuspendLayout();
+            this.grpboxSearch.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tbqueries
+            // grpboxSearch
             // 
-            this.tbqueries.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.tbqueries.Controls.Add(this.Exit);
-            this.tbqueries.Controls.Add(this.btnSearch);
-            this.tbqueries.Controls.Add(this.groupBox1);
-            this.tbqueries.Location = new System.Drawing.Point(4, 22);
-            this.tbqueries.Name = "tbqueries";
-            this.tbqueries.Padding = new System.Windows.Forms.Padding(3);
-            this.tbqueries.Size = new System.Drawing.Size(352, 311);
-            this.tbqueries.TabIndex = 0;
-            this.tbqueries.Text = "Queries";
-            // 
-            // Exit
-            // 
-            this.Exit.Location = new System.Drawing.Point(170, 267);
-            this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(96, 23);
-            this.Exit.TabIndex = 6;
-            this.Exit.Text = "Exit";
-            this.Exit.UseVisualStyleBackColor = true;
-            this.Exit.Click += new System.EventHandler(this.Exit_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(76, 267);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(95, 23);
-            this.btnSearch.TabIndex = 6;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.txtSearchItem);
-            this.groupBox1.Controls.Add(this.btnRemove);
-            this.groupBox1.Controls.Add(this.btnAdd);
-            this.groupBox1.Controls.Add(this.lstQueryItems);
-            this.groupBox1.Controls.Add(this.lblExport);
-            this.groupBox1.Controls.Add(this.lblTarget);
-            this.groupBox1.Controls.Add(this.btnExport);
-            this.groupBox1.Controls.Add(this.btnTarget);
-            this.groupBox1.Controls.Add(this.txtExportPath);
-            this.groupBox1.Controls.Add(this.txtFolderInput);
-            this.groupBox1.Location = new System.Drawing.Point(6, 6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(340, 250);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Search Properties";
+            this.grpboxSearch.Controls.Add(this.txtSearchItem);
+            this.grpboxSearch.Controls.Add(this.btnRemove);
+            this.grpboxSearch.Controls.Add(this.btnAdd);
+            this.grpboxSearch.Controls.Add(this.lstQueryItems);
+            this.grpboxSearch.Controls.Add(this.lblExport);
+            this.grpboxSearch.Controls.Add(this.lblTarget);
+            this.grpboxSearch.Controls.Add(this.btnExport);
+            this.grpboxSearch.Controls.Add(this.btnTarget);
+            this.grpboxSearch.Controls.Add(this.txtExportPath);
+            this.grpboxSearch.Controls.Add(this.txtFolderInput);
+            this.grpboxSearch.Location = new System.Drawing.Point(7, 12);
+            this.grpboxSearch.Name = "grpboxSearch";
+            this.grpboxSearch.Size = new System.Drawing.Size(340, 250);
+            this.grpboxSearch.TabIndex = 6;
+            this.grpboxSearch.TabStop = false;
+            this.grpboxSearch.Text = "Search Properties";
             // 
             // txtSearchItem
             // 
@@ -190,61 +150,50 @@
             this.txtFolderInput.Name = "txtFolderInput";
             this.txtFolderInput.Size = new System.Drawing.Size(160, 20);
             this.txtFolderInput.TabIndex = 6;
+            this.txtFolderInput.Text = "C:\\Users\\Jesse\\Documents\\Archieve";
             // 
-            // tbcfse
+            // Exit
             // 
-            this.tbcfse.Controls.Add(this.tbqueries);
-            this.tbcfse.Controls.Add(this.tbSearch);
-            this.tbcfse.Location = new System.Drawing.Point(12, 12);
-            this.tbcfse.Name = "tbcfse";
-            this.tbcfse.SelectedIndex = 0;
-            this.tbcfse.Size = new System.Drawing.Size(360, 337);
-            this.tbcfse.TabIndex = 0;
+            this.Exit.Location = new System.Drawing.Point(171, 268);
+            this.Exit.Name = "Exit";
+            this.Exit.Size = new System.Drawing.Size(96, 23);
+            this.Exit.TabIndex = 8;
+            this.Exit.Text = "Exit";
+            this.Exit.UseVisualStyleBackColor = true;
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
-            // tbSearch
+            // btnSearch
             // 
-            this.tbSearch.Controls.Add(this.flowLayoutPanel1);
-            this.tbSearch.Location = new System.Drawing.Point(4, 22);
-            this.tbSearch.Name = "tbSearch";
-            this.tbSearch.Padding = new System.Windows.Forms.Padding(3);
-            this.tbSearch.Size = new System.Drawing.Size(352, 311);
-            this.tbSearch.TabIndex = 1;
-            this.tbSearch.Text = "Search";
-            this.tbSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Location = new System.Drawing.Point(77, 268);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(95, 23);
+            this.btnSearch.TabIndex = 7;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // flowLayoutPanel1
+            // frmQuerySettings
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(352, 314);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // frmFSE
-            // 
-            this.AcceptButton = this.btnAdd;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 361);
-            this.Controls.Add(this.tbcfse);
-            this.Name = "frmFSE";
-            this.Text = "FSE";
-            this.tbqueries.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.tbcfse.ResumeLayout(false);
-            this.tbSearch.ResumeLayout(false);
+            this.ClientSize = new System.Drawing.Size(359, 305);
+            this.ControlBox = false;
+            this.Controls.Add(this.Exit);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.grpboxSearch);
+            this.Name = "frmQuerySettings";
+            this.Text = "Query_Settings";
+            this.Load += new System.EventHandler(this.frmQuerySettings_Load);
+            this.grpboxSearch.ResumeLayout(false);
+            this.grpboxSearch.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabPage tbqueries;
-        private System.Windows.Forms.TabControl tbcfse;
-        private System.Windows.Forms.FolderBrowserDialog fbdDirectory;
-        private System.Windows.Forms.Button Exit;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grpboxSearch;
+        private System.Windows.Forms.TextBox txtSearchItem;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.ListBox lstQueryItems;
@@ -254,11 +203,8 @@
         private System.Windows.Forms.Button btnTarget;
         private System.Windows.Forms.TextBox txtExportPath;
         private System.Windows.Forms.TextBox txtFolderInput;
-        private System.Windows.Forms.TextBox txtSearchItem;
-        private System.Windows.Forms.TabPage tbSearch;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-
-
+        private System.Windows.Forms.Button Exit;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.FolderBrowserDialog fbdDirectory;
     }
 }
-
